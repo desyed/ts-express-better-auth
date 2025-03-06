@@ -72,3 +72,12 @@ npm run dev
 
 ## Project Structure
 
+```text
+src/
+├── config/ # Configuration files
+├── databases/ # Database setup and migrations
+├── routes/ # API routes
+├── services/ # Business logic
+├── types/ # TypeScript types
+└── main.ts # Application entry point
+```
