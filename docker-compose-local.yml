@@ -1,0 +1,15 @@
+services:
+  ts-express-better-auth:
+    container_name: ts-express-better-auth
+    image: postgres:latest
+    ports:
+      - '7433:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ts-express-better-auth
+    volumes:
+      - ts-express-better-auth-pg-data:/var/lib/postgresql/data
+
+volumes:
+  ts-express-better-auth-pg-data:
