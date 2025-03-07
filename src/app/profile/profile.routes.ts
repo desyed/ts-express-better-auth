@@ -13,7 +13,7 @@ const router = Router();
  *       200:
  *         description: The profile
  */
-router.get('/', (req, res) => {
+router.get('/', (_req, res) => {
   res.json({ message: 'Hello, world!' });
 });
 
