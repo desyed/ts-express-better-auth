@@ -57,6 +57,7 @@ export function configureOAS(app: Express) {
     // @ts-expect-error
     apiReference({
       theme: 'kepler',
+      layout: 'classic',
       defaultHttpClient: {
         targetKey: 'js',
         clientKey: 'fetch',
