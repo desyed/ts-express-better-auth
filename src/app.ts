@@ -8,18 +8,18 @@ import appRouter from '@/app/index';
 import env from '@/config/env';
 import { errorHandler, notFoundHandler } from '@/lib/error';
 
+import { helmetConfig } from './config/helmet';
 import { auth } from './lib/auth';
+import { configureOAS } from './lib/oas-config';
 import { allowSessionOrigins } from './middlewares/cors.middleware';
 const app = express();
 
 // The client’s IP address is understood as the left-most entry in the X-Forwarded-For header
 app.enable('trust proxy');
 
-app.use(
-  helmet({
-    xPoweredBy: false,
-  })
-);
+app.use(helmet(helmetConfig));
+
+configureOAS(app);
 
 app.use(allowSessionOrigins);
 
